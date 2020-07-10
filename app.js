@@ -5,13 +5,7 @@ const server = http.createServer(function(req, res){
         res.write('Hello world');
         res.end();
     }
-    else if(req.url === "/home"){
-        res.write('i am home');
-        res.end();
-    }
 });
-
-
 
 server.listen('3000');
 

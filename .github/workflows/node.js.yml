@@ -35,7 +35,7 @@ jobs:
 
     steps:
     - name: SSH and deploy node app
-      uses: https://github.com/olagunjuraman/CI-CD
+      uses: actions/CI-CD@master
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}

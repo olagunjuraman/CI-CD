@@ -35,7 +35,7 @@ jobs:
 
     steps:
     - name: SSH and deploy node app
-      uses: actions/CI-CD@master
+      uses: actions/checkout@v2
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}

@@ -28,21 +28,15 @@ jobs:
         npm install
       
 
+action "Run deploy script" {
 
-  deploy:
+uses = "maddox/actions/ssh@master"
+  args = "/opt/deploy/run"
+  secrets = [
+    "PRIVATE_KEY",
+    "HOST",
+    "USER"
+  ]
+}
 
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: SSH and deploy node app
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-    
-        script: |
-          cd ~/CI-CD
-          git pull origin master
-          pm2 restart node-app
+ 
